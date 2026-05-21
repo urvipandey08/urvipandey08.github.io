@@ -1,0 +1,597 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Portfolio | Urvi Pandey</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
+
+  <style>
+
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+      scroll-behavior:smooth;
+    }
+
+    body{
+      font-family:'Poppins',sans-serif;
+      background:linear-gradient(to bottom right,#0b0f19,#111827,#0f172a);
+      color:#ffffff;
+      overflow-x:hidden;
+    }
+
+    a{
+      text-decoration:none;
+      color:inherit;
+    }
+
+    /* NAVBAR */
+
+    header{
+      width:100%;
+      position:fixed;
+      top:0;
+      left:0;
+      z-index:1000;
+      background:rgba(10,15,25,0.75);
+      backdrop-filter:blur(12px);
+      border-bottom:1px solid rgba(255,255,255,0.06);
+    }
+
+    nav{
+      max-width:1200px;
+      margin:auto;
+      padding:1rem 2rem;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+    }
+
+    .logo{
+      font-size:1.4rem;
+      font-weight:700;
+      letter-spacing:1px;
+      color:#7dd3fc;
+    }
+
+    .nav-links{
+      display:flex;
+      gap:2rem;
+    }
+
+    .nav-links a{
+      color:#cbd5e1;
+      transition:0.3s ease;
+      font-weight:500;
+      position:relative;
+    }
+
+    .nav-links a:hover{
+      color:#7dd3fc;
+    }
+
+    /* SECTION */
+
+    section{
+      min-height:100vh;
+      padding:8rem 2rem 4rem;
+      display:flex;
+      justify-content:center;
+      align-items:center;
+    }
+
+    .container{
+      max-width:1200px;
+      width:100%;
+    }
+
+    /* HERO */
+
+    .hero{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+      gap:4rem;
+      align-items:center;
+    }
+
+    .hero-text h1{
+      font-size:4rem;
+      line-height:1.1;
+      margin-bottom:1rem;
+    }
+
+    .hero-text span{
+      color:#7dd3fc;
+    }
+
+    .typing-text{
+      font-size:1.2rem;
+      color:#94a3b8;
+      margin-bottom:1.5rem;
+      min-height:30px;
+    }
+
+    .hero-text p{
+      color:#cbd5e1;
+      line-height:1.8;
+      margin-bottom:2rem;
+      max-width:600px;
+    }
+
+    .button-group{
+      display:flex;
+      gap:1rem;
+      flex-wrap:wrap;
+    }
+
+    .btn{
+      padding:0.9rem 1.7rem;
+      border-radius:12px;
+      font-weight:600;
+      transition:0.3s ease;
+      display:inline-block;
+    }
+
+    .primary-btn{
+      background:#7dd3fc;
+      color:#081018;
+    }
+
+    .primary-btn:hover{
+      transform:translateY(-4px);
+      box-shadow:0 10px 25px rgba(125,211,252,0.35);
+    }
+
+    .secondary-btn{
+      border:1px solid rgba(255,255,255,0.15);
+      color:#e2e8f0;
+      background:rgba(255,255,255,0.04);
+    }
+
+    .secondary-btn:hover{
+      background:#7dd3fc;
+      color:#081018;
+      transform:translateY(-4px);
+    }
+
+    /* PROFILE CARD */
+
+    .profile-card{
+      position:relative;
+      background:rgba(255,255,255,0.04);
+      border:1px solid rgba(255,255,255,0.08);
+      border-radius:30px;
+      padding:2rem;
+      backdrop-filter:blur(14px);
+      overflow:hidden;
+      box-shadow:0 10px 40px rgba(0,0,0,0.35);
+    }
+
+    .profile-card::before{
+      content:'';
+      position:absolute;
+      width:220px;
+      height:220px;
+      background:rgba(125,211,252,0.15);
+      border-radius:50%;
+      top:-70px;
+      right:-70px;
+      filter:blur(45px);
+    }
+
+    .profile-image{
+      width:230px;
+      height:230px;
+      border-radius:50%;
+      margin:auto;
+      background:linear-gradient(135deg,#1e293b,#0f172a);
+      border:3px solid rgba(125,211,252,0.5);
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      font-size:4rem;
+      color:#7dd3fc;
+      overflow:hidden;
+    }
+
+    .profile-image img{
+      width:100%;
+      height:100%;
+      object-fit:cover;
+    }
+
+    .profile-card h3{
+      margin-top:1.5rem;
+      text-align:center;
+      font-size:1.5rem;
+    }
+
+    .profile-card p{
+      text-align:center;
+      color:#94a3b8;
+      margin-top:0.5rem;
+    }
+
+    /* ABOUT */
+
+    .section-title{
+      text-align:center;
+      font-size:2.7rem;
+      margin-bottom:3rem;
+      color:#ffffff;
+    }
+
+    .about-box{
+      background:rgba(255,255,255,0.04);
+      border:1px solid rgba(255,255,255,0.08);
+      padding:3rem;
+      border-radius:25px;
+      backdrop-filter:blur(14px);
+    }
+
+    .about-box p{
+      color:#cbd5e1;
+      line-height:1.9;
+      margin-bottom:1.5rem;
+      font-size:1.05rem;
+    }
+
+    /* SKILLS */
+
+    .skills{
+      display:flex;
+      flex-wrap:wrap;
+      gap:1rem;
+      margin-top:2rem;
+    }
+
+    .skill{
+      padding:0.9rem 1.3rem;
+      background:rgba(255,255,255,0.05);
+      border-radius:12px;
+      border:1px solid rgba(255,255,255,0.06);
+      transition:0.3s ease;
+      cursor:default;
+    }
+
+    .skill:hover{
+      background:#7dd3fc;
+      color:#081018;
+      transform:translateY(-5px);
+    }
+
+    /* CONTACT */
+
+    .contact-box{
+      max-width:800px;
+      margin:auto;
+      background:rgba(255,255,255,0.04);
+      border:1px solid rgba(255,255,255,0.08);
+      border-radius:25px;
+      padding:3rem;
+      text-align:center;
+      backdrop-filter:blur(14px);
+    }
+
+    .contact-box p{
+      color:#cbd5e1;
+      margin-bottom:2rem;
+    }
+
+    .social-links{
+      display:flex;
+      justify-content:center;
+      gap:1.5rem;
+      flex-wrap:wrap;
+    }
+
+    .social-links a{
+      width:60px;
+      height:60px;
+      border-radius:50%;
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      background:rgba(255,255,255,0.05);
+      border:1px solid rgba(255,255,255,0.08);
+      font-size:1.3rem;
+      transition:0.3s ease;
+    }
+
+    .social-links a:hover{
+      background:#7dd3fc;
+      color:#081018;
+      transform:translateY(-5px);
+      box-shadow:0 10px 25px rgba(125,211,252,0.35);
+    }
+
+    /* FOOTER */
+
+    footer{
+      text-align:center;
+      padding:2rem;
+      color:#94a3b8;
+      border-top:1px solid rgba(255,255,255,0.06);
+    }
+
+    /* ANIMATION */
+
+    .fade-in{
+      opacity:0;
+      transform:translateY(30px);
+      transition:all 1s ease;
+    }
+
+    .fade-in.show{
+      opacity:1;
+      transform:translateY(0);
+    }
+
+    /* MOBILE */
+
+    @media(max-width:768px){
+
+      .hero-text h1{
+        font-size:2.8rem;
+      }
+
+      .section-title{
+        font-size:2.2rem;
+      }
+
+      nav{
+        padding:1rem;
+      }
+
+      .nav-links{
+        gap:1rem;
+      }
+
+      .about-box,
+      .contact-box{
+        padding:2rem;
+      }
+
+    }
+
+  </style>
+</head>
+
+<body>
+
+  <!-- NAVBAR -->
+
+  <header>
+    <nav>
+
+      <div class="logo">URVI PANDEY</div>
+
+      <div class="nav-links">
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+      </div>
+
+    </nav>
+  </header>
+
+  <!-- HOME -->
+
+  <section id="home">
+
+    <div class="container hero fade-in">
+
+      <div class="hero-text">
+
+        <h1>Hi, I'm <span>Urvi Pandey</span></h1>
+
+        <div class="typing-text">
+          <span id="typing"></span>
+        </div>
+
+        <p>
+          Currently pursuing a B.Tech degree in Electronics and Telecommunication Engineering, with a strong passion for web development, artificial intelligence, and modern software technologies focused on building impactful digital experiences.
+        </p>
+
+        <div class="button-group">
+
+          <a href="#contact" class="btn primary-btn">
+            🚀 Get In Touch
+          </a>
+
+          <a href="resume.pdf" class="btn secondary-btn" target="_blank">
+            📄 View Resume
+          </a>
+
+        </div>
+
+      </div>
+
+      <!-- PROFILE CARD -->
+
+      <div class="profile-card">
+
+        <div class="profile-image">
+
+          <!-- ADD YOUR IMAGE HERE LATER -->
+          <!-- Example:
+          <img src="yourphoto.jpeg" alt="Profile Photo">
+          -->
+
+          <img src="photo.jpeg" alt="Profile Photo">
+
+        </div>
+
+        <h3>Open to Work 💼</h3>
+
+        <p>
+          Passionate about technology, innovation, and continuous learning.
+        </p>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- ABOUT -->
+
+  <section id="about">
+
+    <div class="container fade-in">
+
+      <h2 class="section-title">About Me</h2>
+
+      <div class="about-box">
+
+        <p>
+          I am deeply interested in technology, design, and problem-solving, with a growing focus on web development, AI, and software systems. I enjoy creating modern digital experiences that combine functionality with clean and intuitive design.
+        </p>
+
+        <p>
+          Alongside technical development, I also explore creative tools and visual design platforms to improve user experience and interface aesthetics. I am continuously learning, experimenting, and building skills across multiple domains of technology.
+        </p>
+
+        <div class="skills">
+
+          <div class="skill">HTML</div>
+          <div class="skill">CSS</div>
+          <div class="skill">JavaScript</div>
+          <div class="skill">C++</div>
+          <div class="skill">Java</div>
+          <div class="skill">Tableau</div>
+          <div class="skill">AI Tools</div>
+          <div class="skill">Figma</div>
+          <div class="skill">Canva</div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- CONTACT -->
+
+  <section id="contact">
+
+    <div class="container fade-in">
+
+      <h2 class="section-title">Contact</h2>
+
+      <div class="contact-box">
+
+        <p>
+          Feel free to connect with me for collaborations, opportunities, networking, or tech-related discussions.
+        </p>
+
+        <div class="social-links">
+
+          <a href="mailto:urvipandey.08@gmail.com">
+            <i class="fa-solid fa-envelope"></i>
+          </a>
+
+          <a href="https://www.linkedin.com/in/urvipandey08/" target="_blank">
+            <i class="fa-brands fa-linkedin-in"></i>
+          </a>
+
+          <a href="https://github.com/urvipandey08" target="_blank">
+            <i class="fa-brands fa-github"></i>
+          </a>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- FOOTER -->
+
+  <footer>
+    © 2026 Urvi Pandey • Built with HTML, CSS & JavaScript
+  </footer>
+
+  <!-- SCRIPT -->
+
+  <script>
+
+    // TYPING EFFECT
+
+    const texts = [
+      "Web Development Enthusiast",
+      "AI Explorer",
+      "Open to Work",
+      "Tech-Driven Learner",
+      "Future Software Developer",
+      "Creative Problem Solver"
+    ];
+
+    let count = 0;
+    let index = 0;
+    let currentText = "";
+    let letter = "";
+
+    (function type(){
+
+      if(count === texts.length){
+        count = 0;
+      }
+
+      currentText = texts[count];
+      letter = currentText.slice(0, ++index);
+
+      document.getElementById('typing').textContent = letter;
+
+      if(letter.length === currentText.length){
+
+        count++;
+        index = 0;
+
+        setTimeout(type, 1500);
+
+      } else {
+
+        setTimeout(type, 90);
+
+      }
+
+    })();
+
+    // SCROLL ANIMATION
+
+    const fadeElements = document.querySelectorAll('.fade-in');
+
+    const observer = new IntersectionObserver(entries => {
+
+      entries.forEach(entry => {
+
+        if(entry.isIntersecting){
+          entry.target.classList.add('show');
+        }
+
+      });
+
+    }, {
+      threshold:0.2
+    });
+
+    fadeElements.forEach(element => {
+      observer.observe(element);
+    });
+
+  </script>
+
+</body>
+</html>
